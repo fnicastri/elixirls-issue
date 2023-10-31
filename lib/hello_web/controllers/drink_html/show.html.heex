@@ -1,0 +1,16 @@
+<.header>
+  Drink <%= @drink.id %>
+  <:subtitle>This is a drink record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/drinks/#{@drink}/edit"}>
+      <.button>Edit drink</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Name"><%= @drink.name %></:item>
+  <:item title="Temperature"><%= @drink.temperature %></:item>
+</.list>
+
+<.back navigate={~p"/drinks"}>Back to drinks</.back>

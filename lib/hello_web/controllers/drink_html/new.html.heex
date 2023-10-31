@@ -1,0 +1,8 @@
+<.header>
+  New Drink
+  <:subtitle>Use this form to manage drink records in your database.</:subtitle>
+</.header>
+
+<.drink_form changeset={@changeset} action={~p"/drinks"} />
+
+<.back navigate={~p"/drinks"}>Back to drinks</.back>

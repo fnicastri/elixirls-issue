@@ -1,0 +1,24 @@
+<.header>
+  Listing Drinks
+  <:actions>
+    <.link href={~p"/drinks/new"}>
+      <.button>New Drink</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="drinks" rows={@drinks} row_click={&JS.navigate(~p"/drinks/#{&1}")}>
+  <:col :let={drink} label="Name"><%= drink.name %></:col>
+  <:col :let={drink} label="Temperature"><%= drink.temperature %></:col>
+  <:action :let={drink}>
+    <div class="sr-only">
+      <.link navigate={~p"/drinks/#{drink}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/drinks/#{drink}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={drink}>
+    <.link href={~p"/drinks/#{drink}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>
